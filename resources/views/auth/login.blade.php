@@ -2,15 +2,17 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
+            
     <form method="POST" action="{{ route('login') }}" class="row g-3 needs-validation">
         @csrf
-
+        
         <!-- Email Address -->
         <div class="col-12">
             <x-input-label for="email" :value="__('Email')" class="form-label" />
             <x-text-input id="email" class="form-control" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="invalid-feedback" />
         </div>
+
 
         <!-- Password -->
         <div class="col-12">

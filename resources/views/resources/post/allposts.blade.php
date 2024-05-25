@@ -29,24 +29,65 @@
 
         <!-- Template Main CSS File -->
         <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+        
+        <style>
+            .card:hover {
+                background-color: #f8f9fa;
+                transform: translateY(-5px);
+                transition: transform 0.3s, background-color 0.3s;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            }
+            .card-body h5 {
+                font-weight: bold;
+            }
+            .card-body p {
+                font-size: 1.1em;
+            }
+            .card-body hr {
+                border-top: 2px solid #e9ecef;
+            }
+            .back-to-top {
+                background-color: #0d6efd;
+                color: white;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+            }
+            .back-to-top:hover {
+                background-color: #0b5ed7;
+                transform: translateY(-3px);
+                transition: transform 0.3s, background-color 0.3s;
+            }
+            .card-title:hover {
+                color: #0d6efd;
+                transition: color 0.3s;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+        </style>
     </head>
 
     <body class="font-sans antialiased">
+        
         <!-- Page Content -->
         <main>
             <div class="container my-5">
                 <div class="row">
                     <div class="col-12 mb-4">
-                        <h3>Posts</h3>
+                        <h3 class="text-primary">Posts</h3>
                     </div>
                 </div>
                 @isset($allposts)
                 @foreach ($allposts as $post)
-                <div class="card">
+                <div class="card mb-4 shadow-lg">
                     <div class="card-body">
-                        <h5 class="card-title">{{ $post->subject }}</h5>
+                        <h5 class="card-title text-primary">{{ $post->subject }}</h5>
                         <p><small><b>Author:</b> {{ $post->user->name }}</small></p>
-                        {{ $post->post }}
+                        <p>{{ $post->post }}</p>
                         <p class="border-top mt-4 font-monospace">For your feedback you can email the author on <a href="mailto:{{ $post->user->email }}">{{ $post->user->email }}</a></p>
                     </div>
                 </div>
@@ -55,7 +96,9 @@
             </div>
         </main>
 
-        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+            <i class="bi bi-arrow-up-short"></i>
+        </a>
 
         <!-- Vendor JS Files -->
         <script src="{{ asset('assets/vendor/apexcharts/apexcharts.min.js') }}"></script>

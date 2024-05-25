@@ -17,6 +17,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
+
 Route::get('/', [PostController::class, 'postIndex'])->name('post.postIndex');
 
 Route::middleware('auth', 'verified')->group(function () {
