@@ -14,4 +14,17 @@
             </div>
         </div>
     </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="font-monospace"><small><b>Total post: </b>{{ $totalPosts }}</small></p>
+            <hr>
+            <p class="font-monospace"><small><b>Total Published Post: </b>{{ $totalPublish }}</small></p>
+            <hr>
+            <p class="font-monospace"><small><b>Total Unpublished Post: </b>{{ $totalUnPublish }}</small></p>
+            <hr>
+            <!-- <p class="font-monospace">Total publish post:<b>{{ $totalPosts }}</b> </p> -->
+        </div>
+    </div>
 </x-app-layout>
